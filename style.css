@@ -1,0 +1,52 @@
+body {
+  overflow: hidden;
+}
+
+.gameHeader {
+  text-align: center;
+}
+
+.gameScreen {
+  height: 100vh;
+  width: calc(100vh - 210px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gameStats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gameStat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.gameStat input {
+  width: 100px;
+  text-align: center;
+}
+
+.gameBoard {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: calc(100vh - 210px);
+  align-items: center;
+}
+
+.gameButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Table */
+table {
+  width: calc(100vh - 210px);
+  height: calc(100vh - 210px);
+}
