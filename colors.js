@@ -1,4 +1,4 @@
-// https://gist.github.com/mucar/3898821?permalink_comment_id=3033596#gistcomment-3033596
+//Source https://gist.github.com/mucar/3898821?permalink_comment_id=3033596#gistcomment-3033596
 let colorsList = [
   {
     color: "indian red",
@@ -3632,13 +3632,13 @@ let colorsList = [
   //     id: 454,
   //   },
 
-  {
-    color: "gray 99",
-    code: {
-      hex: "#FCFCFC",
-    },
-    id: 455,
-  },
+  // {
+  //   color: "gray 99",
+  //   code: {
+  //     hex: "#FCFCFC",
+  //   },
+  //   id: 455,
+  // },
 
   {
     color: "gray 98",
@@ -3688,739 +3688,739 @@ let colorsList = [
     id: 461,
   },
 
-  {
-    color: "gray 92",
-    code: {
-      hex: "#EBEBEB",
-    },
-    id: 462,
-  },
-
-  {
-    color: "gray 91",
-    code: {
-      hex: "#E8E8E8",
-    },
-    id: 463,
-  },
-
-  {
-    color: "gray 90",
-    code: {
-      hex: "#E5E5E5",
-    },
-    id: 464,
-  },
-
-  {
-    color: "gray 89",
-    code: {
-      hex: "#E3E3E3",
-    },
-    id: 465,
-  },
-
-  {
-    color: "gray 88",
-    code: {
-      hex: "#E0E0E0",
-    },
-    id: 466,
-  },
-
-  {
-    color: "gray 87",
-    code: {
-      hex: "#DEDEDE",
-    },
-    id: 467,
-  },
-
-  {
-    color: "gray 86",
-    code: {
-      hex: "#DBDBDB",
-    },
-    id: 468,
-  },
-
-  {
-    color: "gray 85",
-    code: {
-      hex: "#D9D9D9",
-    },
-    id: 469,
-  },
-
-  {
-    color: "gray 84",
-    code: {
-      hex: "#D6D6D6",
-    },
-    id: 470,
-  },
-
-  {
-    color: "gray 83",
-    code: {
-      hex: "#D4D4D4",
-    },
-    id: 471,
-  },
-
-  {
-    color: "gray 82",
-    code: {
-      hex: "#D1D1D1",
-    },
-    id: 472,
-  },
-
-  {
-    color: "gray 81",
-    code: {
-      hex: "#CFCFCF",
-    },
-    id: 473,
-  },
-
-  {
-    color: "gray 80",
-    code: {
-      hex: "#CCCCCC",
-    },
-    id: 474,
-  },
-
-  {
-    color: "gray 79",
-    code: {
-      hex: "#C9C9C9",
-    },
-    id: 475,
-  },
-
-  {
-    color: "gray 78",
-    code: {
-      hex: "#C7C7C7",
-    },
-    id: 476,
-  },
-
-  {
-    color: "gray 77",
-    code: {
-      hex: "#C4C4C4",
-    },
-    id: 477,
-  },
-
-  {
-    color: "gray 76",
-    code: {
-      hex: "#C2C2C2",
-    },
-    id: 478,
-  },
-
-  {
-    color: "gray 75",
-    code: {
-      hex: "#BFBFBF",
-    },
-    id: 479,
-  },
-
-  {
-    color: "gray 74",
-    code: {
-      hex: "#BDBDBD",
-    },
-    id: 480,
-  },
-
-  {
-    color: "gray 73",
-    code: {
-      hex: "#BABABA",
-    },
-    id: 481,
-  },
-
-  {
-    color: "gray 72",
-    code: {
-      hex: "#B8B8B8",
-    },
-    id: 482,
-  },
-
-  {
-    color: "gray 71",
-    code: {
-      hex: "#B5B5B5",
-    },
-    id: 483,
-  },
-
-  {
-    color: "gray 70",
-    code: {
-      hex: "#B3B3B3",
-    },
-    id: 484,
-  },
-
-  {
-    color: "gray 69",
-    code: {
-      hex: "#B0B0B0",
-    },
-    id: 485,
-  },
-
-  {
-    color: "gray 68",
-    code: {
-      hex: "#ADADAD",
-    },
-    id: 486,
-  },
-
-  {
-    color: "gray 67",
-    code: {
-      hex: "#ABABAB",
-    },
-    id: 487,
-  },
-
-  {
-    color: "gray 66",
-    code: {
-      hex: "#A8A8A8",
-    },
-    id: 488,
-  },
-
-  {
-    color: "gray 65",
-    code: {
-      hex: "#A6A6A6",
-    },
-    id: 489,
-  },
-
-  {
-    color: "gray 64",
-    code: {
-      hex: "#A3A3A3",
-    },
-    id: 490,
-  },
-
-  {
-    color: "gray 63",
-    code: {
-      hex: "#A1A1A1",
-    },
-    id: 491,
-  },
-
-  {
-    color: "gray 62",
-    code: {
-      hex: "#9E9E9E",
-    },
-    id: 492,
-  },
-
-  {
-    color: "gray 61",
-    code: {
-      hex: "#9C9C9C",
-    },
-    id: 493,
-  },
-
-  {
-    color: "gray 60",
-    code: {
-      hex: "#999999",
-    },
-    id: 494,
-  },
-
-  {
-    color: "gray 59",
-    code: {
-      hex: "#969696",
-    },
-    id: 495,
-  },
-
-  {
-    color: "gray 58",
-    code: {
-      hex: "#949494",
-    },
-    id: 496,
-  },
-
-  {
-    color: "gray 57",
-    code: {
-      hex: "#919191",
-    },
-    id: 497,
-  },
-
-  {
-    color: "gray 56",
-    code: {
-      hex: "#8F8F8F",
-    },
-    id: 498,
-  },
-
-  {
-    color: "gray 55",
-    code: {
-      hex: "#8C8C8C",
-    },
-    id: 499,
-  },
-
-  {
-    color: "gray 54",
-    code: {
-      hex: "#8A8A8A",
-    },
-    id: 500,
-  },
-
-  {
-    color: "gray 53",
-    code: {
-      hex: "#878787",
-    },
-    id: 501,
-  },
-
-  {
-    color: "gray 52",
-    code: {
-      hex: "#858585",
-    },
-    id: 502,
-  },
-
-  {
-    color: "gray 51",
-    code: {
-      hex: "#828282",
-    },
-    id: 503,
-  },
-
-  {
-    color: "gray 50",
-    code: {
-      hex: "#7F7F7F",
-    },
-    id: 504,
-  },
-
-  {
-    color: "gray 49",
-    code: {
-      hex: "#7D7D7D",
-    },
-    id: 505,
-  },
-
-  {
-    color: "gray 48",
-    code: {
-      hex: "#7A7A7A",
-    },
-    id: 506,
-  },
-
-  {
-    color: "gray 47",
-    code: {
-      hex: "#787878",
-    },
-    id: 507,
-  },
-
-  {
-    color: "gray 46",
-    code: {
-      hex: "#757575",
-    },
-    id: 508,
-  },
-
-  {
-    color: "gray 45",
-    code: {
-      hex: "#737373",
-    },
-    id: 509,
-  },
-
-  {
-    color: "gray 44",
-    code: {
-      hex: "#707070",
-    },
-    id: 510,
-  },
-
-  {
-    color: "gray 43",
-    code: {
-      hex: "#6E6E6E",
-    },
-    id: 511,
-  },
-
-  {
-    color: "gray 42",
-    code: {
-      hex: "#6B6B6B",
-    },
-    id: 512,
-  },
-
-  {
-    color: "dimgray (gray 42)",
-    code: {
-      hex: "#696969",
-    },
-    id: 513,
-  },
-
-  {
-    color: "gray 40",
-    code: {
-      hex: "#666666",
-    },
-    id: 514,
-  },
-
-  {
-    color: "gray 39",
-    code: {
-      hex: "#636363",
-    },
-    id: 515,
-  },
-
-  {
-    color: "gray 38",
-    code: {
-      hex: "#616161",
-    },
-    id: 516,
-  },
-
-  {
-    color: "gray 37",
-    code: {
-      hex: "#5E5E5E",
-    },
-    id: 517,
-  },
-
-  {
-    color: "gray 36",
-    code: {
-      hex: "#5C5C5C",
-    },
-    id: 518,
-  },
-
-  {
-    color: "gray 35",
-    code: {
-      hex: "#595959",
-    },
-    id: 519,
-  },
-
-  {
-    color: "gray 34",
-    code: {
-      hex: "#575757",
-    },
-    id: 520,
-  },
-
-  {
-    color: "gray 33",
-    code: {
-      hex: "#545454",
-    },
-    id: 521,
-  },
-
-  {
-    color: "gray 32",
-    code: {
-      hex: "#525252",
-    },
-    id: 522,
-  },
-
-  {
-    color: "gray 31",
-    code: {
-      hex: "#4F4F4F",
-    },
-    id: 523,
-  },
-
-  {
-    color: "gray 30",
-    code: {
-      hex: "#4D4D4D",
-    },
-    id: 524,
-  },
-
-  {
-    color: "gray 29",
-    code: {
-      hex: "#4A4A4A",
-    },
-    id: 525,
-  },
-
-  {
-    color: "gray 28",
-    code: {
-      hex: "#474747",
-    },
-    id: 526,
-  },
-
-  {
-    color: "gray 27",
-    code: {
-      hex: "#454545",
-    },
-    id: 527,
-  },
-
-  {
-    color: "gray 26",
-    code: {
-      hex: "#424242",
-    },
-    id: 528,
-  },
-
-  {
-    color: "gray 25",
-    code: {
-      hex: "#404040",
-    },
-    id: 529,
-  },
-
-  {
-    color: "gray 24",
-    code: {
-      hex: "#3D3D3D",
-    },
-    id: 530,
-  },
-
-  {
-    color: "gray 23",
-    code: {
-      hex: "#3B3B3B",
-    },
-    id: 531,
-  },
-
-  {
-    color: "gray 22",
-    code: {
-      hex: "#383838",
-    },
-    id: 532,
-  },
-
-  {
-    color: "gray 21",
-    code: {
-      hex: "#363636",
-    },
-    id: 533,
-  },
-
-  {
-    color: "gray 20",
-    code: {
-      hex: "#333333",
-    },
-    id: 534,
-  },
-
-  {
-    color: "gray 19",
-    code: {
-      hex: "#303030",
-    },
-    id: 535,
-  },
-
-  {
-    color: "gray 18",
-    code: {
-      hex: "#2E2E2E",
-    },
-    id: 536,
-  },
-
-  {
-    color: "gray 17",
-    code: {
-      hex: "#2B2B2B",
-    },
-    id: 537,
-  },
-
-  {
-    color: "gray 16",
-    code: {
-      hex: "#292929",
-    },
-    id: 538,
-  },
-
-  {
-    color: "gray 15",
-    code: {
-      hex: "#262626",
-    },
-    id: 539,
-  },
-
-  {
-    color: "gray 14",
-    code: {
-      hex: "#242424",
-    },
-    id: 540,
-  },
-
-  {
-    color: "gray 13",
-    code: {
-      hex: "#212121",
-    },
-    id: 541,
-  },
-
-  {
-    color: "gray 12",
-    code: {
-      hex: "#1F1F1F",
-    },
-    id: 542,
-  },
-
-  {
-    color: "gray 11",
-    code: {
-      hex: "#1C1C1C",
-    },
-    id: 543,
-  },
-
-  {
-    color: "gray 10",
-    code: {
-      hex: "#1A1A1A",
-    },
-    id: 544,
-  },
-
-  {
-    color: "gray 9",
-    code: {
-      hex: "#171717",
-    },
-    id: 545,
-  },
-
-  {
-    color: "gray 8",
-    code: {
-      hex: "#141414",
-    },
-    id: 546,
-  },
-
-  {
-    color: "gray 7",
-    code: {
-      hex: "#121212",
-    },
-    id: 547,
-  },
-
-  {
-    color: "gray 6",
-    code: {
-      hex: "#0F0F0F",
-    },
-    id: 548,
-  },
-
-  {
-    color: "gray 5",
-    code: {
-      hex: "#0D0D0D",
-    },
-    id: 549,
-  },
-
-  {
-    color: "gray 4",
-    code: {
-      hex: "#0A0A0A",
-    },
-    id: 550,
-  },
-
-  {
-    color: "gray 3",
-    code: {
-      hex: "#080808",
-    },
-    id: 551,
-  },
-
-  {
-    color: "gray 2",
-    code: {
-      hex: "#050505",
-    },
-    id: 552,
-  },
-
-  {
-    color: "gray 1",
-    code: {
-      hex: "#030303",
-    },
-    id: 553,
-  },
+  // {
+  //   color: "gray 92",
+  //   code: {
+  //     hex: "#EBEBEB",
+  //   },
+  //   id: 462,
+  // },
+
+  // {
+  //   color: "gray 91",
+  //   code: {
+  //     hex: "#E8E8E8",
+  //   },
+  //   id: 463,
+  // },
+
+  // {
+  //   color: "gray 90",
+  //   code: {
+  //     hex: "#E5E5E5",
+  //   },
+  //   id: 464,
+  // },
+
+  // {
+  //   color: "gray 89",
+  //   code: {
+  //     hex: "#E3E3E3",
+  //   },
+  //   id: 465,
+  // },
+
+  // {
+  //   color: "gray 88",
+  //   code: {
+  //     hex: "#E0E0E0",
+  //   },
+  //   id: 466,
+  // },
+
+  // {
+  //   color: "gray 87",
+  //   code: {
+  //     hex: "#DEDEDE",
+  //   },
+  //   id: 467,
+  // },
+
+  // {
+  //   color: "gray 86",
+  //   code: {
+  //     hex: "#DBDBDB",
+  //   },
+  //   id: 468,
+  // },
+
+  // {
+  //   color: "gray 85",
+  //   code: {
+  //     hex: "#D9D9D9",
+  //   },
+  //   id: 469,
+  // },
+
+  // {
+  //   color: "gray 84",
+  //   code: {
+  //     hex: "#D6D6D6",
+  //   },
+  //   id: 470,
+  // },
+
+  // {
+  //   color: "gray 83",
+  //   code: {
+  //     hex: "#D4D4D4",
+  //   },
+  //   id: 471,
+  // },
+
+  // {
+  //   color: "gray 82",
+  //   code: {
+  //     hex: "#D1D1D1",
+  //   },
+  //   id: 472,
+  // },
+
+  // {
+  //   color: "gray 81",
+  //   code: {
+  //     hex: "#CFCFCF",
+  //   },
+  //   id: 473,
+  // },
+
+  // {
+  //   color: "gray 80",
+  //   code: {
+  //     hex: "#CCCCCC",
+  //   },
+  //   id: 474,
+  // },
+
+  // {
+  //   color: "gray 79",
+  //   code: {
+  //     hex: "#C9C9C9",
+  //   },
+  //   id: 475,
+  // },
+
+  // {
+  //   color: "gray 78",
+  //   code: {
+  //     hex: "#C7C7C7",
+  //   },
+  //   id: 476,
+  // },
+
+  // {
+  //   color: "gray 77",
+  //   code: {
+  //     hex: "#C4C4C4",
+  //   },
+  //   id: 477,
+  // },
+
+  // {
+  //   color: "gray 76",
+  //   code: {
+  //     hex: "#C2C2C2",
+  //   },
+  //   id: 478,
+  // },
+
+  // {
+  //   color: "gray 75",
+  //   code: {
+  //     hex: "#BFBFBF",
+  //   },
+  //   id: 479,
+  // },
+
+  // {
+  //   color: "gray 74",
+  //   code: {
+  //     hex: "#BDBDBD",
+  //   },
+  //   id: 480,
+  // },
+
+  // {
+  //   color: "gray 73",
+  //   code: {
+  //     hex: "#BABABA",
+  //   },
+  //   id: 481,
+  // },
+
+  // {
+  //   color: "gray 72",
+  //   code: {
+  //     hex: "#B8B8B8",
+  //   },
+  //   id: 482,
+  // },
+
+  // {
+  //   color: "gray 71",
+  //   code: {
+  //     hex: "#B5B5B5",
+  //   },
+  //   id: 483,
+  // },
+
+  // {
+  //   color: "gray 70",
+  //   code: {
+  //     hex: "#B3B3B3",
+  //   },
+  //   id: 484,
+  // },
+
+  // {
+  //   color: "gray 69",
+  //   code: {
+  //     hex: "#B0B0B0",
+  //   },
+  //   id: 485,
+  // },
+
+  // {
+  //   color: "gray 68",
+  //   code: {
+  //     hex: "#ADADAD",
+  //   },
+  //   id: 486,
+  // },
+
+  // {
+  //   color: "gray 67",
+  //   code: {
+  //     hex: "#ABABAB",
+  //   },
+  //   id: 487,
+  // },
+
+  // {
+  //   color: "gray 66",
+  //   code: {
+  //     hex: "#A8A8A8",
+  //   },
+  //   id: 488,
+  // },
+
+  // {
+  //   color: "gray 65",
+  //   code: {
+  //     hex: "#A6A6A6",
+  //   },
+  //   id: 489,
+  // },
+
+  // {
+  //   color: "gray 64",
+  //   code: {
+  //     hex: "#A3A3A3",
+  //   },
+  //   id: 490,
+  // },
+
+  // {
+  //   color: "gray 63",
+  //   code: {
+  //     hex: "#A1A1A1",
+  //   },
+  //   id: 491,
+  // },
+
+  // {
+  //   color: "gray 62",
+  //   code: {
+  //     hex: "#9E9E9E",
+  //   },
+  //   id: 492,
+  // },
+
+  // {
+  //   color: "gray 61",
+  //   code: {
+  //     hex: "#9C9C9C",
+  //   },
+  //   id: 493,
+  // },
+
+  // {
+  //   color: "gray 60",
+  //   code: {
+  //     hex: "#999999",
+  //   },
+  //   id: 494,
+  // },
+
+  // {
+  //   color: "gray 59",
+  //   code: {
+  //     hex: "#969696",
+  //   },
+  //   id: 495,
+  // },
+
+  // {
+  //   color: "gray 58",
+  //   code: {
+  //     hex: "#949494",
+  //   },
+  //   id: 496,
+  // },
+
+  // {
+  //   color: "gray 57",
+  //   code: {
+  //     hex: "#919191",
+  //   },
+  //   id: 497,
+  // },
+
+  // {
+  //   color: "gray 56",
+  //   code: {
+  //     hex: "#8F8F8F",
+  //   },
+  //   id: 498,
+  // },
+
+  // {
+  //   color: "gray 55",
+  //   code: {
+  //     hex: "#8C8C8C",
+  //   },
+  //   id: 499,
+  // },
+
+  // {
+  //   color: "gray 54",
+  //   code: {
+  //     hex: "#8A8A8A",
+  //   },
+  //   id: 500,
+  // },
+
+  // {
+  //   color: "gray 53",
+  //   code: {
+  //     hex: "#878787",
+  //   },
+  //   id: 501,
+  // },
+
+  // {
+  //   color: "gray 52",
+  //   code: {
+  //     hex: "#858585",
+  //   },
+  //   id: 502,
+  // },
+
+  // {
+  //   color: "gray 51",
+  //   code: {
+  //     hex: "#828282",
+  //   },
+  //   id: 503,
+  // },
+
+  // {
+  //   color: "gray 50",
+  //   code: {
+  //     hex: "#7F7F7F",
+  //   },
+  //   id: 504,
+  // },
+
+  // {
+  //   color: "gray 49",
+  //   code: {
+  //     hex: "#7D7D7D",
+  //   },
+  //   id: 505,
+  // },
+
+  // {
+  //   color: "gray 48",
+  //   code: {
+  //     hex: "#7A7A7A",
+  //   },
+  //   id: 506,
+  // },
+
+  // {
+  //   color: "gray 47",
+  //   code: {
+  //     hex: "#787878",
+  //   },
+  //   id: 507,
+  // },
+
+  // {
+  //   color: "gray 46",
+  //   code: {
+  //     hex: "#757575",
+  //   },
+  //   id: 508,
+  // },
+
+  // {
+  //   color: "gray 45",
+  //   code: {
+  //     hex: "#737373",
+  //   },
+  //   id: 509,
+  // },
+
+  // {
+  //   color: "gray 44",
+  //   code: {
+  //     hex: "#707070",
+  //   },
+  //   id: 510,
+  // },
+
+  // {
+  //   color: "gray 43",
+  //   code: {
+  //     hex: "#6E6E6E",
+  //   },
+  //   id: 511,
+  // },
+
+  // {
+  //   color: "gray 42",
+  //   code: {
+  //     hex: "#6B6B6B",
+  //   },
+  //   id: 512,
+  // },
+
+  // {
+  //   color: "dimgray (gray 42)",
+  //   code: {
+  //     hex: "#696969",
+  //   },
+  //   id: 513,
+  // },
+
+  // {
+  //   color: "gray 40",
+  //   code: {
+  //     hex: "#666666",
+  //   },
+  //   id: 514,
+  // },
+
+  // {
+  //   color: "gray 39",
+  //   code: {
+  //     hex: "#636363",
+  //   },
+  //   id: 515,
+  // },
+
+  // {
+  //   color: "gray 38",
+  //   code: {
+  //     hex: "#616161",
+  //   },
+  //   id: 516,
+  // },
+
+  // {
+  //   color: "gray 37",
+  //   code: {
+  //     hex: "#5E5E5E",
+  //   },
+  //   id: 517,
+  // },
+
+  // {
+  //   color: "gray 36",
+  //   code: {
+  //     hex: "#5C5C5C",
+  //   },
+  //   id: 518,
+  // },
+
+  // {
+  //   color: "gray 35",
+  //   code: {
+  //     hex: "#595959",
+  //   },
+  //   id: 519,
+  // },
+
+  // {
+  //   color: "gray 34",
+  //   code: {
+  //     hex: "#575757",
+  //   },
+  //   id: 520,
+  // },
+
+  // {
+  //   color: "gray 33",
+  //   code: {
+  //     hex: "#545454",
+  //   },
+  //   id: 521,
+  // },
+
+  // {
+  //   color: "gray 32",
+  //   code: {
+  //     hex: "#525252",
+  //   },
+  //   id: 522,
+  // },
+
+  // {
+  //   color: "gray 31",
+  //   code: {
+  //     hex: "#4F4F4F",
+  //   },
+  //   id: 523,
+  // },
+
+  // {
+  //   color: "gray 30",
+  //   code: {
+  //     hex: "#4D4D4D",
+  //   },
+  //   id: 524,
+  // },
+
+  // {
+  //   color: "gray 29",
+  //   code: {
+  //     hex: "#4A4A4A",
+  //   },
+  //   id: 525,
+  // },
+
+  // {
+  //   color: "gray 28",
+  //   code: {
+  //     hex: "#474747",
+  //   },
+  //   id: 526,
+  // },
+
+  // {
+  //   color: "gray 27",
+  //   code: {
+  //     hex: "#454545",
+  //   },
+  //   id: 527,
+  // },
+
+  // {
+  //   color: "gray 26",
+  //   code: {
+  //     hex: "#424242",
+  //   },
+  //   id: 528,
+  // },
+
+  // {
+  //   color: "gray 25",
+  //   code: {
+  //     hex: "#404040",
+  //   },
+  //   id: 529,
+  // },
+
+  // {
+  //   color: "gray 24",
+  //   code: {
+  //     hex: "#3D3D3D",
+  //   },
+  //   id: 530,
+  // },
+
+  // {
+  //   color: "gray 23",
+  //   code: {
+  //     hex: "#3B3B3B",
+  //   },
+  //   id: 531,
+  // },
+
+  // {
+  //   color: "gray 22",
+  //   code: {
+  //     hex: "#383838",
+  //   },
+  //   id: 532,
+  // },
+
+  // {
+  //   color: "gray 21",
+  //   code: {
+  //     hex: "#363636",
+  //   },
+  //   id: 533,
+  // },
+
+  // {
+  //   color: "gray 20",
+  //   code: {
+  //     hex: "#333333",
+  //   },
+  //   id: 534,
+  // },
+
+  // {
+  //   color: "gray 19",
+  //   code: {
+  //     hex: "#303030",
+  //   },
+  //   id: 535,
+  // },
+
+  // {
+  //   color: "gray 18",
+  //   code: {
+  //     hex: "#2E2E2E",
+  //   },
+  //   id: 536,
+  // },
+
+  // {
+  //   color: "gray 17",
+  //   code: {
+  //     hex: "#2B2B2B",
+  //   },
+  //   id: 537,
+  // },
+
+  // {
+  //   color: "gray 16",
+  //   code: {
+  //     hex: "#292929",
+  //   },
+  //   id: 538,
+  // },
+
+  // {
+  //   color: "gray 15",
+  //   code: {
+  //     hex: "#262626",
+  //   },
+  //   id: 539,
+  // },
+
+  // {
+  //   color: "gray 14",
+  //   code: {
+  //     hex: "#242424",
+  //   },
+  //   id: 540,
+  // },
+
+  // {
+  //   color: "gray 13",
+  //   code: {
+  //     hex: "#212121",
+  //   },
+  //   id: 541,
+  // },
+
+  // {
+  //   color: "gray 12",
+  //   code: {
+  //     hex: "#1F1F1F",
+  //   },
+  //   id: 542,
+  // },
+
+  // {
+  //   color: "gray 11",
+  //   code: {
+  //     hex: "#1C1C1C",
+  //   },
+  //   id: 543,
+  // },
+
+  // {
+  //   color: "gray 10",
+  //   code: {
+  //     hex: "#1A1A1A",
+  //   },
+  //   id: 544,
+  // },
+
+  // {
+  //   color: "gray 9",
+  //   code: {
+  //     hex: "#171717",
+  //   },
+  //   id: 545,
+  // },
+
+  // {
+  //   color: "gray 8",
+  //   code: {
+  //     hex: "#141414",
+  //   },
+  //   id: 546,
+  // },
+
+  // {
+  //   color: "gray 7",
+  //   code: {
+  //     hex: "#121212",
+  //   },
+  //   id: 547,
+  // },
+
+  // {
+  //   color: "gray 6",
+  //   code: {
+  //     hex: "#0F0F0F",
+  //   },
+  //   id: 548,
+  // },
+
+  // {
+  //   color: "gray 5",
+  //   code: {
+  //     hex: "#0D0D0D",
+  //   },
+  //   id: 549,
+  // },
+
+  // {
+  //   color: "gray 4",
+  //   code: {
+  //     hex: "#0A0A0A",
+  //   },
+  //   id: 550,
+  // },
+
+  // {
+  //   color: "gray 3",
+  //   code: {
+  //     hex: "#080808",
+  //   },
+  //   id: 551,
+  // },
+
+  // {
+  //   color: "gray 2",
+  //   code: {
+  //     hex: "#050505",
+  //   },
+  //   id: 552,
+  // },
+
+  // {
+  //   color: "gray 1",
+  //   code: {
+  //     hex: "#030303",
+  //   },
+  //   id: 553,
+  // },
 ];

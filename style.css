@@ -26,7 +26,7 @@ body {
 }
 
 .gameStat input {
-  width: 100px;
+  width: 80px;
   text-align: center;
 }
 
@@ -37,6 +37,10 @@ body {
   margin-bottom: 20px;
   height: calc(100vh - 210px);
   align-items: center;
+}
+
+.boardConceal {
+  background-color: black !important;
 }
 
 .gameButtons {

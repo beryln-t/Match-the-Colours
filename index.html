@@ -1,84 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Match the Colours</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="colors.js"></script>
-    <script defer src="main.js"></script>
-  </head>
-  <body>
-    <div class="gameScreen">
-      <h1 class="gameHeader">Match the Colours</h1>
-      <div class="gameStats">
-        <div class="gameStat">
-          Level
-          <input></input>
-        </div>
-        <div class="gameStat">
-         Number of correct matches
-           <div>
-<input></input> / <input></input>
-           </div>
-        </div>
-        <div class="gameStat">
-          Lives
-           <input></input>
-        </div>
-        <div class="gameStat">
-          Timer
-           <input></input>
-        </div>
-      </div>
-      <div id="gameBoard" class="gameBoard">
-        <div id="gameMessage">
-        </div>
-        <div id="gameTable"></div>
-      </div>
-      <div class="gameButtons">
-       <div class="prev">
-          <button>Previous Level</button>
-        </div>
-        <div class="start">
-          <!-- use onclick in html instead of addEventListener -->
-          <button id="startButton" onclick="onStart()">Start</button>
-        </div>
-        <div class="restart">
-          <button>Restart</button>
-        </div>
-        <div class="next">
-          <button>Next Level</button>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Match the Colours</title>
+      <link rel="stylesheet" href="style.css" />
+      <script defer src="colors.js"></script>
+      <script defer src="timer.js"></script>
+      <script defer src="main.js"></script>
+    </head>
+    <body>
+      <div class="gameScreen">
+        <h1 class="gameHeader">Match the Colours</h1>
 
-        <!-- <table id="table" border>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-        </table> -->
+        <div class="gameStats">
+          <div class="gameStat" id="levelStats">
+            Level
+            <input id="currentLevel"></input>
+          </div>
+          <div class="gameStat" id="matchStats">
+          Number of correct matches
+            <div>
+            <input id="correctMatches"></input> / <input id="totalMatches"></input>
+            </div>
+          </div>
+          <div class="gameStat" id="livesStats">
+            Lives
+            <input id="livesRemaining"></input>
+          </div>
+          <div class="gameStat" id="timer">
+            Timer
+            <div id="countdownTimer"> 00:00 </div>
+          </div>
+        </div>
+
+        <div id="gameBoard" class="gameBoard">
+          <div id="gameMessage">
+          </div>
+          <div id="gameTable"></div>
+        </div>
+
+        <div class="gameButtons">
+        <div class="prev">
+            <button>Previous Level</button>
+          </div>
+          <div class="start">
+            <!-- use onclick in html instead of addEventListener -->
+            <button id="startButton" onclick="onStart()">Start</button>
+          </div>
+          <div class="restart">
+            <button>Restart</button>
+          </div>
+          <div class="next">
+            <button>Next Level</button>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+
+
+
+         
