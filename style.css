@@ -15,8 +15,8 @@ body {
 }
 
 .gameStats {
-  display: flex;
   justify-content: space-between;
+  display: none;
 }
 
 .gameStat {
@@ -43,7 +43,7 @@ body {
   background-color: black !important;
 }
 
-.gameButtons {
+.allGameButtons {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -53,4 +53,25 @@ body {
 table {
   width: calc(100vh - 210px);
   height: calc(100vh - 210px);
+}
+
+.gameMessage {
+  text-align: center;
+  font-size: 20px;
+}
+
+#startMessage {
+  display: none;
+}
+
+#firstWinMessage {
+  display: none;
+}
+
+#subsequentWinMessage {
+  display: none;
+}
+
+#loseMessage {
+  display: none;
 }

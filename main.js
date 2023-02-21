@@ -8,10 +8,16 @@ let firstRevealTableDataEl = null;
 let secondRevealTableDataEl = null;
 
 /*----- state variables -----*/
-let gameMessage = document.querySelector("#gameMessage");
 
 /*----- cached elements  -----*/
 
+let gameMessage = document.querySelector(".gameMessage");
+let startMessage = document.querySelector("#startMessage");
+let firstWinMessage = document.querySelector("#firstWinMessage");
+let subsequentWinMessage = document.querySelector("#subsequentWinMessage");
+let loseMessage = document.querySelector("#loseMessage");
+
+let gameStats = document.querySelector(".gameStats");
 let currentLevelEl = document.querySelector("#currentLevel");
 currentLevelEl.value = level;
 let correctMatchesEl = document.querySelector("#correctMatches");
@@ -25,40 +31,48 @@ const calculateColorSize = (level) => {
   return 2 * level ** 2 + 4 * level + 2;
 };
 let totalMatchesEl = document.querySelector("#totalMatches");
-console.log(totalMatchesEl);
 totalMatchesEl.value = calculateColorSize(level);
 
 let livesRemainingEl = document.querySelector("#livesRemaining");
 livesRemainingEl.value = Math.round(calculateGridSize(level) ** 2 * 0.4);
 
+let allGameButtons = document.querySelector(".allGameButtons");
+let startButton = document.querySelector(".startButton");
+let prevButton = document.querySelector(".prevButton");
+let restartButton = document.querySelector(".restartButton");
+let nextButton = document.querySelector(".nextButton");
+
+let gameBoard = document.querySelector("#gameBoard");
+let gameTable = document.querySelector("#gameTable");
 //timer
 
 /*----- event listeners -----*/
 
 /*----- functions -----*/
 // game messages//
-const changeToEmptyGameMessage = () => {
-  gameMessage.style.display = "none";
-};
 
-const changeToInstructionMessage = () => {
-  gameMessage.innerHTML =
-    "Welcome to match the colours, where the objective of the game is, you've guessed it, match the colours! To win, complete matching all the colours before the timer runs out. But wait there's a catch! For each wrong match a life will be deducted, so choose wisely!<br>To start, click on the <Start> button, then click on any tiles to begin matching! Enjoy!</Start>";
-};
-
-const changeToWinMessage = () => {
-  gameMessage.textContent = "Win / lose message";
-};
-
-//game
+//initialize game
 
 const initializeGame = () => {
-  changeToInstructionMessage();
-
-  // Whatever function that you initialized
+  prevButton.style.visibility = "hidden";
+  restartButton.style.visibility = "hidden";
+  nextButton.style.visibility = "hidden";
 };
 
-// Found on stackover flow to select a random number
+initializeGame();
+
+const showGameStats = () => {
+  gameStats.style.display = "flex";
+};
+const showAllButtons = () => {
+  prevButton.style.visibility = "visible";
+  restartButton.style.visibility = "visible";
+  nextButton.style.visibility = "visible";
+};
+
+const hideStartMessage = () => {
+  startMessage.style.display = "none";
+};
 const pickRandomInteger = (maxLength) => {
   return Math.floor(Math.random() * (maxLength - 0 + 1)) + 0;
 };
@@ -77,9 +91,9 @@ const getRandomColor = (colorsSelectedList, colorsArr) => {
 };
 
 const generateTableFunction = () => {
-  let gameBoard = document.querySelector("#gameBoard");
-  let gameTable = document.querySelector("#gameTable");
-  gameTable.innerHTML = ""; //to clear the start message
+  // let gameBoard = document.querySelector("#gameBoard");
+  // let gameTable = document.querySelector("#gameTable");
+  gameTable.innerHTML = ""; //prevent board from duplicating.
 
   let colors = [];
   let gridSize = calculateGridSize(level);
@@ -109,14 +123,6 @@ const generateTableFunction = () => {
       tableData.setAttribute("data-color", colors[randomIndex]);
       colors.splice(randomIndex, 1); //removing the color once applied
       tableData.className = "boardConceal";
-
-      // click to reveal colours
-      // tableData.addEventListener("click", (event) => {
-      //   console.log("Event target ", event.target);
-      //   tableData.classList.remove("boardConceal");
-      // });
-
-      console.log(tableData.className);
       tableRow.append(tableData);
     }
     table.append(tableRow);
@@ -125,18 +131,18 @@ const generateTableFunction = () => {
   gameBoard.append(gameTable);
 };
 
+//game stages
 const onStart = () => {
-  let startButton = document.querySelector("#startButton");
+  let startButton = document.querySelector(".startButton");
   // startButton.setAttribute("disabled", true);
   console.log("Start button is clicked "); // can remove subsequently
 
-  changeToEmptyGameMessage();
+  showGameStats();
+  showAllButtons();
+  hideStartMessage();
   generateTableFunction();
   startTimer();
 };
-
-//calling functions
-initializeGame();
 
 //Event for any clicks that is happening in the table
 const gameTableOnClickCallBack = (event) => {
@@ -158,16 +164,29 @@ const gameTableOnClickCallBack = (event) => {
     clickOrder = 1;
     //compare clicked data
 
-    if (firstRevealedColor === secondRevealedColor) {
-      correctMatchesEl.value++;
-    } else {
-      livesRemainingEl.value--;
+    if (livesRemainingEl.value > 0) {
+      if (firstRevealedColor === secondRevealedColor) {
+        correctMatchesEl.value++;
+      } else {
+        livesRemainingEl.value--;
 
-      setTimeout(() => {
-        secondRevealTableDataEl.classList.add("boardConceal");
-        firstRevealTableDataEl.classList.add("boardConceal");
-      }, 500);
+        setTimeout(() => {
+          secondRevealTableDataEl.classList.add("boardConceal");
+          firstRevealTableDataEl.classList.add("boardConceal");
+        }, 500);
+      }
     }
+  }
+
+  //win lose logic
+  if (livesRemainingEl.value == 0) {
+    console.log("lose");
+    setTimeout(() => {
+      gameTable.style.display = "none";
+    }, 300);
+    setTimeout(() => {
+      loseMessage.style.display = "block";
+    }, 400);
   }
 };
 document
