@@ -34,13 +34,13 @@ let totalMatchesEl = document.querySelector("#totalMatches");
 totalMatchesEl.value = calculateColorSize(level);
 
 let livesRemainingEl = document.querySelector("#livesRemaining");
-livesRemainingEl.value = Math.round(calculateGridSize(level) ** 2 * 0.4);
+livesRemainingEl.value = Math.round(calculateGridSize(level) ** 2 * 0.5);
 
 let allGameButtons = document.querySelector(".allGameButtons");
-let startButton = document.querySelector(".startButton");
-let prevButton = document.querySelector(".prevButton");
-let restartButton = document.querySelector(".restartButton");
-let nextButton = document.querySelector(".nextButton");
+let startButton = document.querySelector("#startButton");
+let prevButton = document.querySelector("#prevButton");
+let restartButton = document.querySelector("#restartButton");
+let nextButton = document.querySelector("#nextButton");
 
 let gameBoard = document.querySelector("#gameBoard");
 let gameTable = document.querySelector("#gameTable");
@@ -54,9 +54,10 @@ let gameTable = document.querySelector("#gameTable");
 //initialize game
 
 const initializeGame = () => {
-  prevButton.style.visibility = "hidden";
-  restartButton.style.visibility = "hidden";
-  nextButton.style.visibility = "hidden";
+  startMessage.style.display = "block";
+  prevButton.setAttribute("disabled", true);
+  restartButton.setAttribute("disabled", true);
+  nextButton.setAttribute("disabled", true);
 };
 
 initializeGame();
@@ -64,10 +65,12 @@ initializeGame();
 const showGameStats = () => {
   gameStats.style.display = "flex";
 };
-const showAllButtons = () => {
-  prevButton.style.visibility = "visible";
-  restartButton.style.visibility = "visible";
-  nextButton.style.visibility = "visible";
+
+const enableButtons = () => {
+  restartButton.removeAttribute("disabled");
+  if (currentLevelEl.value > 1) {
+    prevButton.removeAttribute("disabled");
+  }
 };
 
 const hideStartMessage = () => {
@@ -79,8 +82,8 @@ const pickRandomInteger = (maxLength) => {
 
 const getRandomColor = (colorsSelectedList, colorsArr) => {
   let randomIndex = pickRandomInteger(colorsArr.length - 1);
-  console.log("RandomIndex ", randomIndex);
-  console.log("colorsArr[randomIndex]", colorsArr[randomIndex]);
+  // console.log("RandomIndex ", randomIndex);
+  // console.log("colorsArr[randomIndex]", colorsArr[randomIndex]);
   let color = colorsArr[randomIndex].code.hex; // generating random colour with random index
 
   if (colorsSelectedList.includes(color)) {
@@ -99,6 +102,7 @@ const generateTableFunction = () => {
   let gridSize = calculateGridSize(level);
   let colorSize = calculateColorSize(level);
   console.log("Generate table function. Current gridSize is - ", gridSize); //comment
+  console.log("Generate table function. Current colorSize is - ", colorSize); //comment
   let table = document.createElement("table");
   table.setAttribute("border", "");
 
@@ -115,11 +119,11 @@ const generateTableFunction = () => {
     for (let h = 0; h < gridSize; h++) {
       let tableData = document.createElement("td");
       let randomIndex = pickRandomInteger(colors.length - 1);
-      console.log("randomIndex ", randomIndex);
+      // console.log("randomIndex ", randomIndex);
       tableData.style.backgroundColor = colors[randomIndex];
 
-      console.log("color list ", colors);
-      console.log("color selected", colors[randomIndex]);
+      // console.log("color list ", colors);
+      // console.log("color selected", colors[randomIndex]);
       tableData.setAttribute("data-color", colors[randomIndex]);
       colors.splice(randomIndex, 1); //removing the color once applied
       tableData.className = "boardConceal";
@@ -131,22 +135,19 @@ const generateTableFunction = () => {
   gameBoard.append(gameTable);
 };
 
-//game stages
+//game start
 const onStart = () => {
-  let startButton = document.querySelector(".startButton");
-  // startButton.setAttribute("disabled", true);
   console.log("Start button is clicked "); // can remove subsequently
-
   showGameStats();
-  showAllButtons();
+  enableButtons();
   hideStartMessage();
   generateTableFunction();
-  startTimer();
+  // startTimer();
 };
 
-//Event for any clicks that is happening in the table
+//game play
 const gameTableOnClickCallBack = (event) => {
-  console.log("event target ", event.target);
+  // console.log("event target ", event.target);
   let tableData = event.target;
   tableData.classList.remove("boardConceal");
 
@@ -179,8 +180,9 @@ const gameTableOnClickCallBack = (event) => {
   }
 
   //win lose logic
+  //lose
   if (livesRemainingEl.value == 0) {
-    console.log("lose");
+    // console.log("lose");
     setTimeout(() => {
       gameTable.style.display = "none";
     }, 300);
@@ -188,7 +190,51 @@ const gameTableOnClickCallBack = (event) => {
       loseMessage.style.display = "block";
     }, 400);
   }
+
+  //win
+  if (correctMatchesEl.value == totalMatchesEl.value) {
+    // console.log("win");
+    setTimeout(() => {
+      gameTable.style.display = "none";
+    }, 300);
+    setTimeout(() => {
+      nextButton.removeAttribute("disabled");
+      if (level === 1) {
+        firstWinMessage.style.display = "block";
+      } else if (level > 1) {
+        subsequentWinMessage.style.display = "block";
+      }
+    }, 400);
+  }
 };
 document
   .querySelector("#gameTable")
   .addEventListener("click", gameTableOnClickCallBack);
+
+//button functions
+
+const onPrev = () => {
+  level--;
+  currentLevelEl.value = level;
+  if (currentLevelEl.value == 1) {
+    prevButton.setAttribute("disabled", true);
+    generateTableFunction();
+  }
+};
+
+const onRestart = () => {
+  gameMessage.style.display = "none";
+  gameTable.style.display = "flex";
+  correctMatchesEl.value = 0;
+  livesRemainingEl.value = Math.round(calculateGridSize(level) ** 2 * 0.5);
+  generateTableFunction();
+};
+
+const onNext = () => {
+  gameMessage.style.display = "none";
+  gameTable.style.display = "flex";
+  level++;
+  currentLevelEl.value = level;
+  nextButton.setAttribute("disabled", true);
+  generateTableFunction();
+};

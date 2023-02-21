@@ -17,6 +17,7 @@ body {
 .gameStats {
   justify-content: space-between;
   display: none;
+  text-align: center;
 }
 
 .gameStat {
@@ -42,7 +43,7 @@ body {
 .boardConceal {
   background-color: black !important;
 }
-
+/*update button here */
 .allGameButtons {
   display: flex;
   justify-content: space-between;
