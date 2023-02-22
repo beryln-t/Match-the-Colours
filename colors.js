@@ -1,4 +1,4 @@
-//Source https://gist.github.com/mucar/3898821?permalink_comment_id=3033596#gistcomment-3033596
+//edited from: https://gist.github.com/mucar/3898821?permalink_comment_id=3033596#gistcomment-3033596
 let colorsList = [
   {
     color: "indian red",
@@ -2849,14 +2849,6 @@ let colorsList = [
   },
 
   {
-    color: "chocolate 4 (saddlebrown)",
-    code: {
-      hex: "#8B4513",
-    },
-    id: 357,
-  },
-
-  {
     color: "ivoryblack",
     code: {
       hex: "#292421",
@@ -3497,22 +3489,6 @@ let colorsList = [
   },
 
   {
-    color: "sgi gray 96",
-    code: {
-      hex: "#F4F4F4",
-    },
-    id: 445,
-  },
-
-  //   {
-  //     color: "white*",
-  //     code: {
-  //       hex: "#FFFFFF",
-  //     },
-  //     id: 446,
-  //   },
-
-  {
     color: "white smoke (gray 96)",
     code: {
       hex: "#F5F5F5",
@@ -3584,6 +3560,3 @@ let colorsList = [
     id: 458,
   },
 ];
-
-colors = colorsList.length;
-console.log(colors);

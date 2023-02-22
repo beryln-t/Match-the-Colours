@@ -42,18 +42,26 @@ body {
 
 .boardConceal {
   background-color: black !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
-/*update button here */
+.boardConceal:hover {
+  background-color: #353935 !important;
+}
+
 .allGameButtons {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-/* Table */
 table {
   width: calc(100vh - 210px);
   height: calc(100vh - 210px);
+}
+
+td {
+  border-radius: 20px;
 }
 
 .gameMessage {
@@ -63,4 +71,8 @@ table {
 
 .hide {
   display: none;
+}
+
+.timeAlert {
+  color: red;
 }

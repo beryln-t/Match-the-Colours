@@ -1,7 +1,9 @@
 /*----- constants -----*/
 let level = 1; //Maximum level 13 due to number colors limitation //need to disable next button.
 let clickOrder = 1; // It can be 1 or 2
-let timing = 2 * 60 * 1000;
+let timing = 60000;
+let isTableFirstClick = false;
+
 const calculateGridSize = (level) => {
   return 2 * level + 2;
 };
@@ -30,7 +32,6 @@ let startButton = document.querySelector("#startButton");
 let restartButton = document.querySelector("#restartButton");
 let prevButton = document.querySelector("#prevButton");
 let nextButton = document.querySelector("#nextButton");
-timer;
 
 /*----- cached elements  -----*/
 currentLevelEl.value = level;
@@ -73,6 +74,7 @@ const resetGameStats = () => {
 
 const initializeGame = () => {
   level = 1;
+  getTimer(timing).useStopTimer();
   resetGameStats();
   hideGameStateMessages();
   hideTable();
@@ -143,7 +145,6 @@ const generateTableFunction = () => {
   console.log("Generate table function. Current gridSize is - ", gridSize); //comment
   console.log("Generate table function. Current colorSize is - ", colorSize); //comment
   let table = document.createElement("table");
-  table.setAttribute("border", "");
 
   //setting color
   for (let c = 0; c < colorSize; c++) {
@@ -178,21 +179,38 @@ const generateTableFunction = () => {
 
 //game start
 const onStart = () => {
+  isTableFirstClick = false;
+  getTimer(timing).useStopTimer();
+  getTimer(timing).useSetTimerHTML();
   unhideTable();
   showGameStats();
   resetGameStats();
   enableButtonsOnStart();
   hideAllGameMessage();
   generateTableFunction();
-  startTimer(timing);
 };
 
 //game play
 const gameTableOnClickCallBack = (event) => {
-  // console.log("event target ", event.target);
   let tableData = event.target;
-  tableData.classList.remove("boardConceal");
+  let isTableDataOpen = tableData.getAttribute("data-is-open");
 
+  // Make sure your table data is a td
+  //Convert string to number '0' -> 1
+  if (tableData.tagName !== "TD" || Number(isTableDataOpen) === 1) {
+    return;
+  }
+
+  console.log("isTableFirstCLick ", isTableFirstClick);
+  if (!isTableFirstClick) {
+    getTimer(timing, onLose).useStartTimer();
+    isTableFirstClick = true;
+  }
+
+  tableData.setAttribute("data-is-open", 1);
+
+  tableData.classList.remove("boardConceal");
+  console.log("click successful");
   //logging click data
   // First click
   if (clickOrder === 1) {
@@ -216,38 +234,45 @@ const gameTableOnClickCallBack = (event) => {
         setTimeout(() => {
           secondRevealTableDataEl.classList.add("boardConceal");
           firstRevealTableDataEl.classList.add("boardConceal");
-        }, 300);
+          firstRevealTableDataEl.setAttribute("data-is-open", 0);
+          secondRevealTableDataEl.setAttribute("data-is-open", 0);
+        }, 400);
       }
     }
   }
 
   // Condition for on lose
-  if (livesRemainingEl.value == 0) {
+  if (
+    livesRemainingEl.value == 0 ||
+    (correctMatchesEl.value != totalMatchesEl.value && timing === 0)
+  ) {
     onLose();
   }
-
+  console.log("current time", timing);
   // Condition for on win
-  if (correctMatchesEl.value == totalMatchesEl.value) {
+  if (correctMatchesEl.value == totalMatchesEl.value && timing !== 0) {
     onWin();
   }
 };
 
 const onLose = () => {
+  getTimer(timing).useStopTimer();
   setTimeout(() => {
     hideTable();
     startButton.setAttribute("disabled", true);
-  }, 200);
+  }, 100);
   setTimeout(() => {
     if (currentLevelEl.value == 1) {
       firstLoseMessage.classList.remove("hide");
     } else if (currentLevelEl.value > 1) {
       subsequentLoseMessage.classList.remove("hide");
     }
-  }, 300);
+  }, 200);
 };
 
 const onWin = () => {
   setTimeout(() => {
+    getTimer(timing).useStopTimer();
     hideTable();
     startButton.setAttribute("disabled", true);
   }, 300);
@@ -261,11 +286,25 @@ const onWin = () => {
   }, 400);
 };
 
+const maxLevelReached = () => {
+  console.log("currentLevelEl.value", currentLevelEl.value);
+  if (currentLevelEl.value == 13) {
+    hideAllGameMessage();
+    hideTable();
+    gameStats.classList.add("hide");
+    allGameButtons.classList.add("hide");
+    maxLevelMessage.classList.remove("hide");
+  }
+};
+
 document
   .querySelector("#gameTable")
   .addEventListener("click", gameTableOnClickCallBack);
 
 const onRestart = () => {
+  isTableFirstClick = false;
+  getTimer(timing).useStopTimer();
+  getTimer(timing).useSetTimerHTML();
   resetGameStats();
   enableButtonsOnStart();
   hideAllGameMessage();
@@ -274,6 +313,9 @@ const onRestart = () => {
 };
 
 const onPrev = () => {
+  isTableFirstClick = false;
+  getTimer(timing).useStopTimer();
+  getTimer(timing).useSetTimerHTML();
   hideAllGameMessage();
   unhideTable();
   level--;
@@ -283,6 +325,9 @@ const onPrev = () => {
 };
 
 const onNext = () => {
+  isTableFirstClick = false;
+  getTimer(timing).useStopTimer();
+  getTimer(timing).useSetTimerHTML();
   hideAllGameMessage();
   unhideTable();
   level++;
@@ -290,12 +335,5 @@ const onNext = () => {
   enableButtonsOnStart();
   generateTableFunction();
   nextButton.setAttribute("disabled", true);
+  maxLevelReached();
 };
-
-// if (currentLevelEl.value == 14) {
-//   hideAllGameMessage();
-//   hideTable();
-//   gameStats.classlist.add("hide");
-//   allGameButtons.classList.add("hide");
-//   maxLevelMessage.classList.remove("hide");
-// }
