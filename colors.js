@@ -729,14 +729,6 @@ let colorsList = [
   },
 
   {
-    color: "ghostwhite	",
-    code: {
-      hex: "#F8F8FF",
-    },
-    id: 92,
-  },
-
-  {
     color: "lavender	",
     code: {
       hex: "#E6E6FA",

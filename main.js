@@ -37,13 +37,11 @@ let nextButton = document.querySelector("#nextButton");
 currentLevelEl.value = level;
 correctMatchesEl.value = 0;
 totalMatchesEl.value = calculateColorSize(level);
-livesRemainingEl.value = Math.round(calculateGridSize(level) ** 2 * 0.6);
+livesRemainingEl.value = Math.round(calculateGridSize(level) ** 2 * 0.7);
 let firstRevealedColor = null;
 let secondRevealedColor = null;
 let firstRevealTableDataEl = null;
 let secondRevealTableDataEl = null;
-
-/*----- event listeners -----*/
 
 /*----- functions -----*/
 
@@ -297,10 +295,6 @@ const maxLevelReached = () => {
   }
 };
 
-document
-  .querySelector("#gameTable")
-  .addEventListener("click", gameTableOnClickCallBack);
-
 const onRestart = () => {
   isTableFirstClick = false;
   getTimer(timing).useStopTimer();
@@ -314,11 +308,12 @@ const onRestart = () => {
 
 const onPrev = () => {
   isTableFirstClick = false;
+  level--;
+  timing -= 30000;
   getTimer(timing).useStopTimer();
   getTimer(timing).useSetTimerHTML();
   hideAllGameMessage();
   unhideTable();
-  level--;
   resetGameStats();
   enableButtonsOnStart();
   generateTableFunction();
@@ -326,14 +321,21 @@ const onPrev = () => {
 
 const onNext = () => {
   isTableFirstClick = false;
+  level++;
+  timing += 30000;
   getTimer(timing).useStopTimer();
   getTimer(timing).useSetTimerHTML();
   hideAllGameMessage();
   unhideTable();
-  level++;
   resetGameStats();
   enableButtonsOnStart();
   generateTableFunction();
   nextButton.setAttribute("disabled", true);
   maxLevelReached();
 };
+
+/*----- event listeners -----*/
+
+document
+  .querySelector("#gameTable")
+  .addEventListener("click", gameTableOnClickCallBack);

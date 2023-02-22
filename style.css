@@ -41,12 +41,12 @@ body {
 }
 
 .boardConceal {
-  background-color: black !important;
+  background-color: #676767 !important;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 .boardConceal:hover {
-  background-color: #353935 !important;
+  background-color: #515151 !important;
 }
 
 .allGameButtons {
