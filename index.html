@@ -31,12 +31,13 @@
           </div>
           <div class="gameStat" id="timer">
             Timer
-            <div id="countdownTimer"> 00:00 </div>
+            <div id="countdownTimer"></div>
           </div>
         </div>
 
         <div id="gameBoard" class="gameBoard">
           <div class="gameMessage">
+
             <div id="startMessage">
               <p>Welcome to match the colours, where the objective of the game is, you've guessed it, match the colours! </p>
               <p>To win, complete matching all the colours before the timer runs out. But wait there's a catch! For each wrong match a life will be deducted, so choose wisely! To start, click on the "Start" button, then click on any tiles to begin matching!</p>
@@ -44,31 +45,46 @@
             </div>
 
             <div id="firstWinMessage">
-              <p><strong>Congratulations, you've completed the level!</strong> </p>
+              <h3><strong>Congratulations, you've completed the level!</strong> </h3>
               <p>Click on <strong><em>Next Level</em></strong> to proceed to the next round.</p>
               <p>Click on <strong><em>Restart</em></strong> to try this round again.</p>
             </div>
+
             <div id="subsequentWinMessage">
               <p><strong>Congratulations, you've completed the level!</strong> </p>
               <p>Click on <strong><em>Next Level</em></strong> to proceed to the next round.</p>
-              <p>Click on <strong><em>Restart</em></strong> to try this round again.</p>
               <p>Click on <strong><em>Previous Level</em></strong> to return to the previous round.</p>
+              <p>Click on <strong><em>Restart</em></strong> to try this round again.</p>
+              <p>Click on <strong><em>Home</em></strong> to restart from level 1</p>
             </div>
-            <div id="loseMessage">
+
+            <div id="firstLoseMessage">
               <p><strong>Round Failed!</strong> </p>
-              <p>Click restart to try again!</p>
+              <p>Click on <strong><em>Restart</em></strong> to try this level again!</p>
             </div>
+
+            <div id="subsequentLoseMessage">
+              <p><strong>Round Failed!</strong> </p>
+              <p>Click on <strong><em>Restart</em></strong> to try this level again!</p>
+              <p>Click on <strong><em>Home</em></strong> to restart from level 1</p>
+              <p>Click on <strong><em>Previous Level</em></strong> to return to the previous round.</p>
+              </div>
+  
+             <div id="maxLevel">
+              <p><strong>The End!</strong> </p>
+              <p>More levels are in development. Click home to start from level 1!</p>
+            </div>
+
           </div>
           <div id="gameTable"></div>
         </div>
 
-        <div class="allGameButtons">
-
-            <button id="prevButton" onclick="onPrev()" >Previous Level</button>
+        <div class="allGameButtons"> 
+            <button id="homeButton" onclick="initializeGame()">Home</button>  
             <button id="startButton" onclick="onStart()">Start</button>
             <button id="restartButton" onclick="onRestart()">Restart</button>
+            <button id="prevButton" onclick="onPrev()" >Previous Level</button>
             <button id="nextButton" onclick="onNext()">Next Level</button>
-         
         </div>
       </div>
     </body>

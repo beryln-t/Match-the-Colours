@@ -16,7 +16,7 @@ body {
 
 .gameStats {
   justify-content: space-between;
-  display: none;
+  display: flex;
   text-align: center;
 }
 
@@ -61,18 +61,6 @@ table {
   font-size: 20px;
 }
 
-#startMessage {
-  display: none;
-}
-
-#firstWinMessage {
-  display: none;
-}
-
-#subsequentWinMessage {
-  display: none;
-}
-
-#loseMessage {
+.hide {
   display: none;
 }

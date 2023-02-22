@@ -79,3 +79,43 @@ document
 if (correctMatchesEl.value === totalMatchesEl.value) {
   console.log(win);
 }
+
+
+// const hideAllGameMessage = () => {
+//   startMessage.style.display.classList.add("hide");
+//   firstWinMessage.style.display.classList.add("hide");
+//   subsequentWinMessage.style.display.classList.add("hide");
+//   loseMessage.style.display.classList.add("hide");
+// };
+
+
+const onPrev = () => {
+  hideAllGameMessage();
+  level--;
+  currentLevelEl.value = level;
+  if (currentLevelEl.value == 1) {
+    prevButton.setAttribute("disabled", true);
+    generateTableFunction();
+  }
+};
+
+const onRestart = () => {
+  hideAllGameMessage();
+
+  gameTable.style.display = "flex";
+  correctMatchesEl.value = 0;
+  livesRemainingEl.value = Math.round(calculateGridSize(level) ** 2 * 0.5);
+  generateTableFunction();
+};
+
+const onNext = () => {
+  gameTable.style.display = "flex";
+  level++;
+  currentLevelEl.value = level;
+  nextButton.setAttribute("disabled", true);
+  generateTableFunction();
+   if (currentLevelEl.value == 1) {
+    prevButton.setAttribute("disabled", true);
+  
+  }
+};
