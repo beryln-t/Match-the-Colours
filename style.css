@@ -7,8 +7,8 @@ body {
 }
 
 .gameScreen {
-  height: 100vh;
-  width: calc(100vh - 210px);
+  height: 95vh;
+  width: calc(95vh - 210px);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -36,8 +36,17 @@ body {
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  height: calc(100vh - 210px);
+  height: calc(95vh - 210px);
   align-items: center;
+}
+
+table {
+  width: calc(95vh - 210px);
+  height: calc(95vh - 210px);
+}
+
+td {
+  border-radius: 10px;
 }
 
 .boardConceal {
@@ -49,30 +58,22 @@ body {
   background-color: #515151 !important;
 }
 
-.allGameButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-table {
-  width: calc(100vh - 210px);
-  height: calc(100vh - 210px);
-}
-
-td {
-  border-radius: 20px;
-}
-
 .gameMessage {
   text-align: center;
   font-size: 20px;
 }
 
-.hide {
-  display: none;
+.allGameButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .timeAlert {
   color: red;
+}
+
+.hide {
+  display: none;
 }

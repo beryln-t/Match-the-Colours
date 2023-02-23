@@ -1,6 +1,6 @@
 /*----- constants -----*/
-let level = 1; //Maximum level 13 due to number colors limitation //need to disable next button.
-let clickOrder = 1; // It can be 1 or 2
+let level = 1;
+let clickOrder = 1;
 let timing = 60000;
 let isTableFirstClick = false;
 
@@ -45,7 +45,7 @@ let secondRevealTableDataEl = null;
 
 /*----- functions -----*/
 
-//initialize game
+/*----- Initialize Game -----*/
 
 const hideGameStateMessages = () => {
   firstWinMessage.classList.add("hide");
@@ -78,7 +78,7 @@ const initializeGame = () => {
   hideTable();
   startMessage.classList.remove("hide");
   gameStats.classList.add("hide");
-  startButton.removeAttribute("disabled"); //because if lose then press home, then the start button not there
+  startButton.removeAttribute("disabled");
   homeButton.setAttribute("disabled", true);
   restartButton.setAttribute("disabled", true);
   prevButton.setAttribute("disabled", true);
@@ -87,7 +87,8 @@ const initializeGame = () => {
 
 initializeGame();
 
-//start game
+/*----- OnStart -----*/
+
 const hideAllGameMessage = () => {
   startMessage.classList.add("hide");
   firstWinMessage.classList.add("hide");
@@ -120,10 +121,10 @@ const useRandomColorHelp = () => {
 
   const getRandomColor = (colorsSelectedList, colorsArr) => {
     let randomIndex = pickRandomInteger(colorsArr.length - 1);
-    let color = colorsArr[randomIndex].code.hex; // generating random colour with random index
+    let color = colorsArr[randomIndex].code.hex;
 
     if (colorsSelectedList.includes(color)) {
-      return getRandomColor(colorsSelectedList, colorsArr); //making sure it is a unique colour
+      return getRandomColor(colorsSelectedList, colorsArr);
     }
     return color;
   };
@@ -135,16 +136,15 @@ const useRandomColorHelp = () => {
 };
 
 const generateTableFunction = () => {
-  gameTable.innerHTML = ""; //prevent board from duplicating.
+  gameTable.innerHTML = "";
 
   let colors = [];
   let gridSize = calculateGridSize(level);
   let colorSize = calculateColorSize(level);
-  console.log("Generate table function. Current gridSize is - ", gridSize); //comment
-  console.log("Generate table function. Current colorSize is - ", colorSize); //comment
+  console.log("Generate table function. Current gridSize is - ", gridSize);
+  console.log("Generate table function. Current colorSize is - ", colorSize);
   let table = document.createElement("table");
 
-  //setting color
   for (let c = 0; c < colorSize; c++) {
     let color = useRandomColorHelp().getRandomColor(colors, colorsList);
     colors.push(color);
@@ -159,13 +159,11 @@ const generateTableFunction = () => {
       let randomIndex = useRandomColorHelp().pickRandomInteger(
         colors.length - 1
       );
-      // console.log("randomIndex ", randomIndex);
+
       tableData.style.backgroundColor = colors[randomIndex];
 
-      // console.log("color list ", colors);
-      // console.log("color selected", colors[randomIndex]);
       tableData.setAttribute("data-color", colors[randomIndex]);
-      colors.splice(randomIndex, 1); //removing the color once applied
+      colors.splice(randomIndex, 1);
       tableData.className = "boardConceal";
       tableRow.append(tableData);
     }
@@ -175,7 +173,6 @@ const generateTableFunction = () => {
   gameBoard.append(gameTable);
 };
 
-//game start
 const onStart = () => {
   isTableFirstClick = false;
   getTimer(timing).useStopTimer();
@@ -188,13 +185,12 @@ const onStart = () => {
   generateTableFunction();
 };
 
-//game play
+/*----- Game Board & Game Logic -----*/
+
 const gameTableOnClickCallBack = (event) => {
   let tableData = event.target;
   let isTableDataOpen = tableData.getAttribute("data-is-open");
 
-  // Make sure your table data is a td
-  //Convert string to number '0' -> 1
   if (tableData.tagName !== "TD" || Number(isTableDataOpen) === 1) {
     return;
   }
@@ -209,20 +205,16 @@ const gameTableOnClickCallBack = (event) => {
 
   tableData.classList.remove("boardConceal");
   console.log("click successful");
-  //logging click data
-  // First click
+
   if (clickOrder === 1) {
     firstRevealedColor = tableData.getAttribute("data-color");
     firstRevealTableDataEl = tableData;
     clickOrder = 2;
-  }
-  // Second click
-  else if (clickOrder === 2) {
+  } else if (clickOrder === 2) {
     secondRevealedColor = tableData.getAttribute("data-color");
     secondRevealTableDataEl = tableData;
     clickOrder = 1;
 
-    //compare clicked data
     if (livesRemainingEl.value > 0) {
       if (firstRevealedColor === secondRevealedColor) {
         correctMatchesEl.value++;
@@ -239,7 +231,6 @@ const gameTableOnClickCallBack = (event) => {
     }
   }
 
-  // Condition for on lose
   if (
     livesRemainingEl.value == 0 ||
     (correctMatchesEl.value != totalMatchesEl.value && timing === 0)
@@ -247,7 +238,7 @@ const gameTableOnClickCallBack = (event) => {
     onLose();
   }
   console.log("current time", timing);
-  // Condition for on win
+
   if (correctMatchesEl.value == totalMatchesEl.value && timing !== 0) {
     onWin();
   }
@@ -290,46 +281,39 @@ const maxLevelReached = () => {
     hideAllGameMessage();
     hideTable();
     gameStats.classList.add("hide");
-    allGameButtons.classList.add("hide");
     maxLevelMessage.classList.remove("hide");
   }
 };
 
-const onRestart = () => {
-  isTableFirstClick = false;
+/*----- Other Game Buttons -----*/
+
+const commonResets = () => {
   getTimer(timing).useStopTimer();
   getTimer(timing).useSetTimerHTML();
   resetGameStats();
-  enableButtonsOnStart();
   hideAllGameMessage();
+  enableButtonsOnStart();
   unhideTable();
   generateTableFunction();
+};
+
+const onRestart = () => {
+  isTableFirstClick = false;
+  commonResets();
 };
 
 const onPrev = () => {
   isTableFirstClick = false;
   level--;
   timing -= 30000;
-  getTimer(timing).useStopTimer();
-  getTimer(timing).useSetTimerHTML();
-  hideAllGameMessage();
-  unhideTable();
-  resetGameStats();
-  enableButtonsOnStart();
-  generateTableFunction();
+  commonResets();
 };
 
 const onNext = () => {
   isTableFirstClick = false;
   level++;
   timing += 30000;
-  getTimer(timing).useStopTimer();
-  getTimer(timing).useSetTimerHTML();
-  hideAllGameMessage();
-  unhideTable();
-  resetGameStats();
-  enableButtonsOnStart();
-  generateTableFunction();
+  commonResets();
   nextButton.setAttribute("disabled", true);
   maxLevelReached();
 };

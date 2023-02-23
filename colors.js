@@ -1777,14 +1777,6 @@ let colorsList = [
   },
 
   {
-    color: "green 4",
-    code: {
-      hex: "#008B00",
-    },
-    id: 224,
-  },
-
-  {
     color: "green*",
     code: {
       hex: "#008000",
