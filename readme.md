@@ -11,6 +11,7 @@ With age, our brain detiorates and our mental function detiorates. To combate th
 [Click here](**to insert game link**) to try the game.
 
 The objective of the game is find all matching pairs of tiles. In each level, there will be a fixed number of total correct matches. To win, players need to find all matching tiles before the timer runs out. But there's a catch, you only have a limited number of tries so choose each tile wisely! There are 12 levels to this game, how far can you go?
+<br>
 
 > - To start the game, click on the `Start` button.
 > - Once the tiles are generated, click on 2 different tiles in the grid to start matching.
@@ -21,8 +22,23 @@ The objective of the game is find all matching pairs of tiles. In each level, th
 > - Once level is completed, proceed to the next level to attempt game at increased difficulty.
 > - If you've failed the level, click on `Restart` to try the level again.
 > - Click on `Home` to restart the entire game and begin from level 1.
+>   <br>
+
+<p align="center"><img src="https://raw.githubusercontent.com/beryln-t/Project-1-Memory-Game/main/readme%20pics/Start%20Screen.png" width="50%" height="50%"> </p>
+ <p align="center">[Start screen]</p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/beryln-t/Project-1-Memory-Game/main/readme%20pics/During%20game.png" width="50%" height="50%"> </p>
+ <p align="center">[Game grid with successfully matched tiles]</p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/beryln-t/Project-1-Memory-Game/main/readme%20pics/Other%20Levels.png" width="50%" height="50%"> </p>
+ <p align="center">[Subsequent levels with increased difficulty]</p>
 
 ## Technologies Used
+
+1. HTML
+2. CSS
+3. JavaScript
+4. Git and GitHub
 
 ## Future Enhancements and Developments
 
