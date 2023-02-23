@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@900&family=Overpass:wght@300;700&display=swap");
+
 body {
+  background-image: url("https://images.unsplash.com/photo-1528731708534-816fe59f90cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
   font-family: "Overpass", sans-serif;
 }
@@ -10,21 +14,31 @@ h2 {
 }
 
 h1 {
-  font-size: 40px;
+  color: #f69b1b;
+  font-size: 45px;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
 }
 
 h2 {
+  color: #383838;
+  font-size: 35px;
+}
+
+p {
   font-size: 25px;
+  color: #383838;
 }
 
 button {
   font-family: "Overpass", sans-serif;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 700;
   text-align: center;
 }
 .gameHeader {
   text-align: center;
-  margin-top: auto;
+  margin-top: 20px;
   margin-bottom: 15px;
 }
 
@@ -40,6 +54,9 @@ button {
   justify-content: space-between;
   display: flex;
   text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #383838;
 }
 
 .gameStat {
@@ -88,12 +105,11 @@ td {
 .allGameButtons {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .timeAlert {
-  color: red;
+  color: #c50909;
 }
 
 .hide {
@@ -103,9 +119,10 @@ td {
 #countdownTimer {
   width: 88px;
   height: 21px;
+  font-size: 15px;
 }
 
 .changeSaturation {
-  filter: saturate(50%);
+  filter: saturate(30%);
   transition: filter 0.2s linear;
 }

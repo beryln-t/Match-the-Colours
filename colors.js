@@ -3489,58 +3489,10 @@ let colorsList = [
   },
 
   {
-    color: "lightgrey",
-    code: {
-      hex: "#D3D3D3",
-    },
-    id: 449,
-  },
-
-  {
     color: "silver*",
     code: {
       hex: "#C0C0C0",
     },
     id: 450,
-  },
-
-  {
-    color: "darkgray",
-    code: {
-      hex: "#A9A9A9",
-    },
-    id: 451,
-  },
-
-  {
-    color: "gray*",
-    code: {
-      hex: "#808080",
-    },
-    id: 452,
-  },
-
-  {
-    color: "dimgray (gray 42)",
-    code: {
-      hex: "#696969",
-    },
-    id: 453,
-  },
-
-  {
-    color: "gray 97",
-    code: {
-      hex: "#F7F7F7",
-    },
-    id: 457,
-  },
-
-  {
-    color: "white smoke (gray 96)",
-    code: {
-      hex: "#F5F5F5",
-    },
-    id: 458,
   },
 ];

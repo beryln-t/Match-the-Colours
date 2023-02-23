@@ -224,7 +224,7 @@ const gameTableOnClickCallBack = (event) => {
           firstRevealTableDataEl.classList.add("boardConceal");
           firstRevealTableDataEl.setAttribute("data-is-open", 0);
           secondRevealTableDataEl.setAttribute("data-is-open", 0);
-        }, 400);
+        }, 300);
       }
     }
   }
@@ -246,14 +246,14 @@ const onLose = () => {
   setTimeout(() => {
     hideTable();
     startButton.setAttribute("disabled", true);
-  }, 100);
+  }, 200);
   setTimeout(() => {
     if (currentLevelEl.value == 1) {
       firstLoseMessage.classList.remove("hide");
     } else if (currentLevelEl.value > 1) {
       subsequentLoseMessage.classList.remove("hide");
     }
-  }, 200);
+  }, 300);
 };
 
 const onWin = () => {
@@ -261,7 +261,7 @@ const onWin = () => {
     getTimer(timing).useStopTimer();
     hideTable();
     startButton.setAttribute("disabled", true);
-  }, 300);
+  }, 200);
   setTimeout(() => {
     nextButton.removeAttribute("disabled");
     if (currentLevelEl.value == 1) {
