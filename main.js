@@ -141,8 +141,6 @@ const generateTableFunction = () => {
   let colors = [];
   let gridSize = calculateGridSize(level);
   let colorSize = calculateColorSize(level);
-  console.log("Generate table function. Current gridSize is - ", gridSize);
-  console.log("Generate table function. Current colorSize is - ", colorSize);
   let table = document.createElement("table");
 
   for (let c = 0; c < colorSize; c++) {
@@ -195,7 +193,6 @@ const gameTableOnClickCallBack = (event) => {
     return;
   }
 
-  console.log("isTableFirstCLick ", isTableFirstClick);
   if (!isTableFirstClick) {
     getTimer(timing, onLose).useStartTimer();
     isTableFirstClick = true;
@@ -204,7 +201,6 @@ const gameTableOnClickCallBack = (event) => {
   tableData.setAttribute("data-is-open", 1);
 
   tableData.classList.remove("boardConceal");
-  console.log("click successful");
 
   if (clickOrder === 1) {
     firstRevealedColor = tableData.getAttribute("data-color");
@@ -218,6 +214,8 @@ const gameTableOnClickCallBack = (event) => {
     if (livesRemainingEl.value > 0) {
       if (firstRevealedColor === secondRevealedColor) {
         correctMatchesEl.value++;
+        firstRevealTableDataEl.classList.add("changeSaturation");
+        secondRevealTableDataEl.classList.add("changeSaturation");
       } else {
         livesRemainingEl.value--;
 
@@ -237,7 +235,6 @@ const gameTableOnClickCallBack = (event) => {
   ) {
     onLose();
   }
-  console.log("current time", timing);
 
   if (correctMatchesEl.value == totalMatchesEl.value && timing !== 0) {
     onWin();
@@ -272,16 +269,17 @@ const onWin = () => {
     } else if (currentLevelEl.value > 1) {
       subsequentWinMessage.classList.remove("hide");
     }
-  }, 400);
+  }, 300);
 };
 
 const maxLevelReached = () => {
-  console.log("currentLevelEl.value", currentLevelEl.value);
   if (currentLevelEl.value == 13) {
     hideAllGameMessage();
     hideTable();
     gameStats.classList.add("hide");
     maxLevelMessage.classList.remove("hide");
+    startButton.setAttribute("disabled", true);
+    restartButton.setAttribute("disabled", true);
   }
 };
 
@@ -290,6 +288,7 @@ const maxLevelReached = () => {
 const commonResets = () => {
   getTimer(timing).useStopTimer();
   getTimer(timing).useSetTimerHTML();
+  showGameStats();
   resetGameStats();
   hideAllGameMessage();
   enableButtonsOnStart();
