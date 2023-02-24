@@ -42,7 +42,7 @@ The objective of the game is to find all matching pairs of tiles. In each level,
 
 ## Key Development Considerations
 
-### Picking unique random colours
+### 1. Picking unique random colours
 
 The table has to be filled with pairs of unique colours. In the event that the entire table is filled with the same colour, any random click will result in the same match. Hence there is a need to check that colours selected are not the same by comparing the hex code, and removing colours that have already been selected from available options.
 
@@ -69,7 +69,7 @@ const useRandomColorHelp = () => {
 };
 ```
 
-### Preventing clicks on the same tile
+### 2. Preventing clicks on the same tile
 
 While testing during development, I found out that clicking on the same tile or clicking on already matched tiles would also count as a correct match. Hence to prevent that, I had to prevent clicks on tiles that are already open.
 
