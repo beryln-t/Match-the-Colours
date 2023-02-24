@@ -8,7 +8,7 @@ With age our brain deteriorates, and our mental function slowly decreases. To pr
 
 ## How to Play
 
-[Click here](**to insert game link**) to try the game.
+[Click here](https://beryln-t.github.io/Project-1-Memory-Game/) to try the game.
 
 The objective of the game is to find all matching pairs of tiles. In each level, there will be a fixed number of total correct matches. To win, players need to find all matching tiles before the timer runs out. But there's a catch, you only have a limited number of tries so choose each tile wisely! There are 12 levels to this game, how far can you go?
 <br>
